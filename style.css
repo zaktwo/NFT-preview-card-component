@@ -106,9 +106,16 @@ body {
     padding: 1.3rem;
 }
 
-.img-card, img {
+.img-card> img {
     border-radius: 1rem;
+    transition: .5s ease;
     
+}
+.img-card:hover > img{
+    cursor: pointer;
+    color: var(--Cyan);
+    
+    opacity: 0.3
 }
 .description{
     margin-top: 0.5rem;
@@ -127,6 +134,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.eth{
+    color: var(--Cyan);
+}
+.days-left{
+    color: var(--Soft-blue);
+}
 .account{
     
     display: flex;
@@ -141,5 +154,8 @@ body {
     width: 50px;
 }
 .name{
-
+    color: var(--Soft-blue);
+}
+.name > span{
+    color: var(--White);
 }
