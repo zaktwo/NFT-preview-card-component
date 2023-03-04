@@ -9,6 +9,8 @@
     --White: hsl(0, 0%, 100%);
 
     --font-Outfit: 'Outfit', sans-serif;
+
+    --margin-bott: 1rem;
 }
 
 /*
@@ -105,40 +107,87 @@ body {
     
     padding: 1.3rem;
 }
-
-.img-card> img {
+.img-card{
+    position: relative;
     border-radius: 1rem;
-    transition: .5s ease;
-    
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: var(--margin-bott);
 }
-.img-card:hover > img{
-    cursor: pointer;
-    color: var(--Cyan);
+.img-card> img {
     
-    opacity: 0.3
+     display: block;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--Cyan);
+    opacity: 0;
+    z-index: 999;
+    transition: opacity .6s ease;
+}
+.overlay > img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+   
+}
+
+.overlay:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 .description{
     margin-top: 0.5rem;
     gap: 0.5rem;
 }
-.description-1{
-    color: var(--Soft-blue);
-}
+
 .title{
     color: var(--White);
     font-weight: 600;
+    transition: .5s ease;
+    margin-bottom: var(--margin-bott);
+}
+.title:hover{
+    cursor: pointer;
+    color: var(--Cyan);
+}
+.description-1{
+    color: var(--Soft-blue);
+    margin-bottom: var(--margin-bott);
+    font-weight: 400;
 }
 .price-section{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    display: row;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--Soft-blue);
+    margin-bottom: var(--margin-bott);
 }
+
 .eth{
+    display: flex;
+    display: row;
+    align-items: center;
     color: var(--Cyan);
 }
+.eth > img{
+    margin-right: 0.5rem;
+}
 .days-left{
+    display: flex;
+    display: row;
+    align-items: center;
     color: var(--Soft-blue);
+}
+.days-left > img{
+    margin-right: 0.5rem;
 }
 .account{
     
@@ -146,16 +195,26 @@ body {
     flex-direction: row;
     justify-content: start;
     align-items: center;
+    margin-top: var(--margin-bott);
+    font-weight: 300;
+    
 }
 .account > img{
     border: 1px solid;
     border-radius: 50%;
     border-color: var(--White);
-    width: 50px;
+    width: 2rem;
+    margin-right: 1rem;
 }
 .name{
     color: var(--Soft-blue);
 }
-.name > span{
+.name-title{
     color: var(--White);
+    transition: .5s ease;
+}
+.name-title:hover{
+    
+    cursor: pointer;
+    color: var(--Cyan);
 }
